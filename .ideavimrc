@@ -1,0 +1,90 @@
+"Options
+let mapleader = ";"
+
+set relativenumber
+
+"Plugins
+Plug 'machakann/vim-highlightedyank'
+Plug 'phaazon/hop.nvim'
+Plug 'tpope/vim-commentary'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+
+"Mappings
+nmap :f :action ReformatCode<cr>
+
+" Debugging and running stuff : prefix
+nmap :b :action ToggleLineBreakpoint<cr>
+nmap :d :action Debug<cr>
+nmap :r :action Run<cr>
+nmap :i :action StepInto<cr>
+nmap :o :action StepOver<cr>
+nmap :O :action StepOut<cr>
+
+" Close tab
+nmap <leader>q :action CloseContent<cr>
+nmap <leader>Q :action ReopenClosedTab<cr>
+
+" Swap windows
+nmap <leader>wo :action NextSplitter<cr>
+nmap <leader>wp :action PrevSplitter<cr>
+
+" Fuzzy finder and file navigation
+nmap <leader>c :action GotoClass<cr>
+nmap <leader>f :action GotoFile<cr>
+nmap <leader>e :action SearchEverywhere<cr>
+nmap <leader><leader> :action Switcher<cr>
+nmap <leader>p :action FindInPath<cr>
+nmap <leader>u :action FindUsages<cr>
+nmap <leader>C :action CallHierarchy<cr>
+nmap <leader>s :action $SearchWeb<cr>
+
+" Git stuff
+nmap <leader>gb :action Git.Branches<cr>
+nmap <leader>gp :action Git.Pull<cr>
+nmap <leader>gu :action Git.Push<cr>
+nmap <leader>gr :action Git.Rebase<cr>
+nmap <leader>gm :action Git.Merge<cr>
+
+" Jump to words (hopper)
+nmap <leader>l :action KJumpAction.Line<cr>
+nmap <leader>h :action KJumpAction.Word0<cr>
+
+" Errors
+nmap <leader>x :action GotoNextError<cr>
+nmap <leader>X :action GotoPreviousError<cr>
+
+" Refactorings
+vmap R :action Refactorings.QuickListPopupAction<cr>
+vmap <leader>em :action ExtractMethod<cr>
+nmap <leader>re :action RenameElement<cr>
+nmap <leader>ge :action Generate<cr>
+nmap <leader>oi :action OptimizeImports<cr>
+
+" Tabs
+nnoremap [b :action PreviousTab<cr>
+nnoremap ]b :action NextTab<cr>
+
+" Inspection
+nmap <leader>rc :action InspectCode<cr>
+
+
+" Information about docs/errors etc
+nmap ,a :action ShowIntentionActions<cr>
+nmap ,e :action ShowErrorDescription<cr>
+nmap ,i :action QuickImplementations<cr>
+nmap ,d :action QuickJavaDoc<cr>
+
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors 
+nmap <C-n> <Plug>NextWholeOccurrence 
+xmap <C-n> <Plug>NextWholeOccurrence 
+nmap g<C-n> <Plug>NextOccurrence 
+xmap g<C-n> <Plug>NextOccurrence 
+nmap <C-q> <Plug>SkipOccurrence 
+xmap <C-q> <Plug>SkipOccurrence 
+nmap <C-r> <Plug>RemoveOccurrence 
+xmap <C-r> <Plug>RemoveOccurrence
+
+set ideajoin
