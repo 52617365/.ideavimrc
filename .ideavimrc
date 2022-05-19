@@ -28,8 +28,11 @@ nmap <leader>q :action CloseContent<cr>
 nmap <leader>Q :action ReopenClosedTab<cr>
 
 " Swap windows
-nmap <leader>wo :action NextSplitter<cr>
-nmap <leader>wp :action PrevSplitter<cr>
+" nmap <leader>wo :action NextSplitter<cr>
+" nmap <leader>wp :action PrevSplitter<cr>
+
+nmap <C-b><Right> :action NextSplitter<cr>
+nmap <C-b><Left> :action PrevSplitter<cr>
 
 " Fuzzy finder and file navigation
 nmap <leader>c :action GotoClass<cr>
@@ -56,12 +59,6 @@ nmap <leader>h :action KJumpAction.Word0<cr>
 nmap <leader>x :action GotoNextError<cr>
 nmap <leader>X :action GotoPreviousError<cr>
 
-" Refactorings
-vmap R :action Refactorings.QuickListPopupAction<cr>
-vmap <leader>em :action ExtractMethod<cr>
-nmap <leader>re :action RenameElement<cr>
-nmap <leader>ge :action Generate<cr>
-nmap <leader>oi :action OptimizeImports<cr>
 
 " Tabs
 nnoremap [b :action PreviousTab<cr>
@@ -70,6 +67,13 @@ nnoremap ]b :action NextTab<cr>
 " Inspection
 nmap <leader>rc :action InspectCode<cr>
 
+
+" Refactorings
+vmap R :action Refactorings.QuickListPopupAction<cr>
+vmap ,e :action ExtractMethod<cr>
+nmap ,r :action RenameElement<cr>
+nmap ,g :action Generate<cr>
+nmap ,o :action OptimizeImports<cr>
 
 " Information about docs/errors etc
 nmap ,a :action ShowIntentionActions<cr>
