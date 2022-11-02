@@ -1,5 +1,5 @@
 "Options
-let mapleader = ";"
+let mapleader = "["
 
 set relativenumber
 
@@ -12,44 +12,30 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 
-"Mappings
-nmap :f :action ReformatCode<cr>
-
 " Debugging and running stuff : prefix
 nmap :b :action ToggleLineBreakpoint<cr>
 nmap :d :action Debug<cr>
 nmap :r :action Run<cr>
-nmap :i :action StepInto<cr>
-nmap :o :action StepOver<cr>
-nmap :O :action StepOut<cr>
+nmap [i :action StepInto<cr>
+nmap [o :action StepOver<cr>
+nmap [O :action StepOut<cr>
 
 " Close tab
 nmap <leader>q :action CloseContent<cr>
 nmap <leader>Q :action ReopenClosedTab<cr>
 
-" Swap windows
-" nmap <leader>wo :action NextSplitter<cr>
-" nmap <leader>wp :action PrevSplitter<cr>
-
-nmap <C-b><Right> :action NextSplitter<cr>
-nmap <C-b><Left> :action PrevSplitter<cr>
+nmap <C-1> :action NextSplitter<cr>
+nmap <C-2> :action PrevSplitter<cr>
 
 " Fuzzy finder and file navigation
 nmap <leader>c :action GotoClass<cr>
 nmap <leader>f :action GotoFile<cr>
+nmap <leader>g :action FindInPath<cr>
 nmap <leader>e :action SearchEverywhere<cr>
 nmap <leader><leader> :action Switcher<cr>
-nmap <leader>p :action FindInPath<cr>
-nmap <leader>u :action FindUsages<cr>
+nmap <leader>r :action FindUsages<cr>
 nmap <leader>C :action CallHierarchy<cr>
 nmap <leader>s :action $SearchWeb<cr>
-
-" Git stuff
-nmap <leader>gb :action Git.Branches<cr>
-nmap <leader>gp :action Git.Pull<cr>
-nmap <leader>gu :action Git.Push<cr>
-nmap <leader>gr :action Git.Rebase<cr>
-nmap <leader>gm :action Git.Merge<cr>
 
 " Jump to words (hopper)
 nmap <leader>l :action KJumpAction.Line<cr>
@@ -70,25 +56,26 @@ nmap <leader>rc :action InspectCode<cr>
 
 " Refactorings
 vmap R :action Refactorings.QuickListPopupAction<cr>
-vmap ,e :action ExtractMethod<cr>
-nmap ,r :action RenameElement<cr>
+vmap <leader>e :action ExtractMethod<cr>
+nmap <leader>r :action RenameElement<cr>
 nmap ,g :action Generate<cr>
 nmap ,o :action OptimizeImports<cr>
 
 " Information about docs/errors etc
-nmap ,a :action ShowIntentionActions<cr>
-nmap ,e :action ShowErrorDescription<cr>
-nmap ,i :action QuickImplementations<cr>
-nmap ,d :action QuickJavaDoc<cr>
+nmap [a :action ShowIntentionActions<cr>
+" nmap [e :action ShowErrorDescription<cr>
+" nmap ,i :action QuickImplementations<cr>
+" nmap ,d :action QuickJavaDoc<cr>
 
-" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors 
-nmap <C-n> <Plug>NextWholeOccurrence 
-xmap <C-n> <Plug>NextWholeOccurrence 
-nmap g<C-n> <Plug>NextOccurrence 
-xmap g<C-n> <Plug>NextOccurrence 
-nmap <C-q> <Plug>SkipOccurrence 
-xmap <C-q> <Plug>SkipOccurrence 
-nmap <C-r> <Plug>RemoveOccurrence 
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+nmap <C-q> <Plug>SkipOccurrence
+xmap <C-q> <Plug>SkipOccurrence
+nmap <C-r> <Plug>RemoveOccurrence
 xmap <C-r> <Plug>RemoveOccurrence
+set clipboard+=unnamed
 
 set ideajoin
