@@ -48,7 +48,6 @@ nnoremap ]t :action PreviousTab<cr>
 " Refactorings
 vmap <leader>e :action ExtractMethod<cr>
 nmap <leader>r :action RenameElement<cr>
-nmap <leader>g :action Generate<cr>
 
 " Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
 nmap <C-n> <Plug>NextWholeOccurrence
