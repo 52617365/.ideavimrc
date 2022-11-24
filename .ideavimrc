@@ -12,6 +12,10 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 
+" Split window horizontally
+nmap <leader>s :action SplitVertically<cr>
+nmap <leader>d :action SplitHorizontally<cr>
+
 " Debugging and running stuff : prefix
 nmap :b :action ToggleLineBreakpoint<cr>
 nmap :d :action Debug<cr>
@@ -29,7 +33,6 @@ nmap <leader>f :action GotoFile<cr>
 nmap <leader>g :action FindInPath<cr>
 nmap <leader><leader> :action Switcher<cr>
 nmap <leader>u :action FindUsages<cr>
-nmap <leader>s :action $SearchWeb<cr>
 
 " Jump to words (hopper)
 nmap <leader>l :action KJumpAction.Line<cr>
